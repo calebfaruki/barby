@@ -47,7 +47,7 @@ EOT
     end
 
     def bars_to_rects(opts={})
-      rects = ''
+      rects = String.new
       with_options opts do
         x, y = lmargin, tmargin
 
@@ -86,7 +86,7 @@ EOT
     end
 
     def bars_to_path_data(opts={})
-      path_data = ''
+      path_data = String.new
       with_options opts do
         x, y = lmargin+(xdim/2), tmargin
 

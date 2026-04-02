@@ -46,7 +46,7 @@ module Barby
     #ex: [W,N,W,W,N,N] => "111011100010"
     def encoding_for_interleaved(*bars_and_spaces)
       bar = false#starts with bar
-      bars_and_spaces.flatten.inject '' do |enc,bar_or_space|
+      bars_and_spaces.flatten.inject(String.new) do |enc,bar_or_space|
         bar = !bar
         enc << (bar ? '1' : '0') * (bar_or_space == WIDE ? wide_width : narrow_width)
       end

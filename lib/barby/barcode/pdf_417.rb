@@ -65,7 +65,7 @@ module Barby
       row = nil
       @pdf417.getOutBits.each_with_index do |byte, n|
         if n%cols == 0
-          row = ""
+          row = String.new
           enc << row
         end
         row << sprintf("%08b", (byte & 0xff) | 0x100)
